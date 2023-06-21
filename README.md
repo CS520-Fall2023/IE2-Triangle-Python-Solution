@@ -2,7 +2,7 @@
 Example program for a software testing exercise that focuses on unit testing and
 test effectiveness, using code coverage and mutation analysis.
 
-# required python packages
+# Required python packages
 1. pip install -r requirements.txt. You may choose to create a virtual environment/conda environment. The python version should be 3.8>=. 
 2. Test the setup by running 'python -m TriangleTest'
 3. make sure to place "mut.py" in the test_suit folder.
