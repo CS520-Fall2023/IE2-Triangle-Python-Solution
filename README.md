@@ -4,7 +4,9 @@ test effectiveness, using code coverage and mutation analysis.
 
 # Required python packages
 1. pip install -r requirements.txt. You may choose to create a virtual environment/conda environment. The python version should be 3.8>=. 
-2. Test the setup by running 'python -m TriangleTest'
+2. Test the setup by running 'python -m TriangleTest'. 
+   cd test_suit
+   python -m TriangleTest
 3. make sure to place "mut.py" in the test_suit folder.
 
 If you encounter an error with "if self.isAlive():" from mutpy, do the following:
