@@ -36,7 +36,7 @@
 <h3>Details</h3>
 <ul>
     <li>module - <code><module 'isTriangle' from '.\\isTriangle.py'></code></li>
-    <li><span class="label label-success">killed</span> by <code>test_killMutant1 (test_mutationAdequate.MutantAdequateTest)</code></li>
+    <li><span class="label label-success">killed</span> by <code>test_classify_additional_triangles (test_mutationAdequate.MutantAdequateTest)</code></li>
     
     
     <li>tests run - 1</li>
@@ -45,9 +45,9 @@
 
 <h3>Exception traceback</h3>
 <pre>Traceback (most recent call last):
-  File ".\test_mutationAdequate.py", line 10, in test_killMutant1
-    self.assertEqual(actual, expected)
-AssertionError: <Type.SCALENE: 1> != <Type.EQUILATERAL: 2>
+  File ".\test_mutationAdequate.py", line 214, in test_classify_additional_triangles
+    self.assertEqual(Triangle.classify(3, 4, 5), Triangle.Type.SCALENE)
+AssertionError: <Type.INVALID: 0> != <Type.SCALENE: 1>
 </pre>
 
 <h3>Mutations</h3>
