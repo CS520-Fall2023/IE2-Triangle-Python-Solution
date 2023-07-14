@@ -17,7 +17,9 @@ If you encounter an error with "if self.isAlive():" from mutpy, do the following
 
 # Testing
 ''mutation'': run './mutation.sh'
+
 ''line coverage'': run './statement_coverage.sh'
+
 ''branch coverage'': run ./condition_coverage.sh'
 
 
