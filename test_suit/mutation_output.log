@@ -1,0 +1,1472 @@
+[*] Start mutation process:
+   - targets: isTriangle
+   - tests: test_mutationAdequate
+[*] 14 tests passed:
+   - test_mutationAdequate [0.00000 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR isTriangle: 
+--------------------------------------------------------------------------------
+  31:         if b == c:
+  32:             trian += 3
+  33:         
+  34:         if trian == 0:
+- 35:             if (Decimal(a) + Decimal(b) <= Decimal(c) or Decimal(a) + Decimal(c) <= Decimal(b) or Decimal(b) + Decimal(c) <= Decimal(a)):
++ 35:             if (Decimal(a) - Decimal(b) <= Decimal(c) or Decimal(a) + Decimal(c) <= Decimal(b) or Decimal(b) + Decimal(c) <= Decimal(a)):
+  36:                 return Triangle.Type.INVALID
+  37:             else:
+  38:                 return Triangle.Type.SCALENE
+  39:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant1_2_3_15_16_36_38_40 (test_mutationAdequate.MutantAdequateTest)
+   - [#   2] AOR isTriangle: 
+--------------------------------------------------------------------------------
+  31:         if b == c:
+  32:             trian += 3
+  33:         
+  34:         if trian == 0:
+- 35:             if (Decimal(a) + Decimal(b) <= Decimal(c) or Decimal(a) + Decimal(c) <= Decimal(b) or Decimal(b) + Decimal(c) <= Decimal(a)):
++ 35:             if (Decimal(a) + Decimal(b) <= Decimal(c) or Decimal(a) - Decimal(c) <= Decimal(b) or Decimal(b) + Decimal(c) <= Decimal(a)):
+  36:                 return Triangle.Type.INVALID
+  37:             else:
+  38:                 return Triangle.Type.SCALENE
+  39:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant1_2_3_15_16_36_38_40 (test_mutationAdequate.MutantAdequateTest)
+   - [#   3] AOR isTriangle: 
+--------------------------------------------------------------------------------
+  31:         if b == c:
+  32:             trian += 3
+  33:         
+  34:         if trian == 0:
+- 35:             if (Decimal(a) + Decimal(b) <= Decimal(c) or Decimal(a) + Decimal(c) <= Decimal(b) or Decimal(b) + Decimal(c) <= Decimal(a)):
++ 35:             if (Decimal(a) + Decimal(b) <= Decimal(c) or Decimal(a) + Decimal(c) <= Decimal(b) or Decimal(b) - Decimal(c) <= Decimal(a)):
+  36:                 return Triangle.Type.INVALID
+  37:             else:
+  38:                 return Triangle.Type.SCALENE
+  39:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant1_2_3_15_16_36_38_40 (test_mutationAdequate.MutantAdequateTest)
+   - [#   4] AOR isTriangle: 
+--------------------------------------------------------------------------------
+  39:         
+  40:         if trian > 3:
+  41:             return Triangle.Type.EQUILATERAL
+  42:         
+- 43:         if (trian == 1 and Decimal(a) + Decimal(b) > Decimal(c)):
++ 43:         if (trian == 1 and Decimal(a) - Decimal(b) > Decimal(c)):
+  44:             return Triangle.Type.ISOSCELES
+  45:         elif (trian == 2 and Decimal(a) + Decimal(c) > Decimal(b)):
+  46:             return Triangle.Type.ISOSCELES
+  47:         elif (trian == 3 and Decimal(b) + Decimal(c) > Decimal(a)):
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant4_7_11_17_32_44_45 (test_mutationAdequate.MutantAdequateTest)
+   - [#   5] AOR isTriangle: 
+--------------------------------------------------------------------------------
+  41:             return Triangle.Type.EQUILATERAL
+  42:         
+  43:         if (trian == 1 and Decimal(a) + Decimal(b) > Decimal(c)):
+  44:             return Triangle.Type.ISOSCELES
+- 45:         elif (trian == 2 and Decimal(a) + Decimal(c) > Decimal(b)):
++ 45:         elif (trian == 2 and Decimal(a) - Decimal(c) > Decimal(b)):
+  46:             return Triangle.Type.ISOSCELES
+  47:         elif (trian == 3 and Decimal(b) + Decimal(c) > Decimal(a)):
+  48:             return Triangle.Type.ISOSCELES
+  49:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant5_12_18_33_47_48 (test_mutationAdequate.MutantAdequateTest)
+   - [#   6] AOR isTriangle: 
+--------------------------------------------------------------------------------
+  43:         if (trian == 1 and Decimal(a) + Decimal(b) > Decimal(c)):
+  44:             return Triangle.Type.ISOSCELES
+  45:         elif (trian == 2 and Decimal(a) + Decimal(c) > Decimal(b)):
+  46:             return Triangle.Type.ISOSCELES
+- 47:         elif (trian == 3 and Decimal(b) + Decimal(c) > Decimal(a)):
++ 47:         elif (trian == 3 and Decimal(b) - Decimal(c) > Decimal(a)):
+  48:             return Triangle.Type.ISOSCELES
+  49:         
+  50:         return Triangle.Type.INVALID
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant6_19_43_50_51 (test_mutationAdequate.MutantAdequateTest)
+   - [#   7] ASR isTriangle: 
+--------------------------------------------------------------------------------
+  24:         
+  25:         trian = 0
+  26:         
+  27:         if a == b:
+- 28:             trian += 1
++ 28:             trian -= 1
+  29:         if a == c:
+  30:             trian += 2
+  31:         if b == c:
+  32:             trian += 3
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant4_7_11_17_32_44_45 (test_mutationAdequate.MutantAdequateTest)
+   - [#   8] ASR isTriangle: 
+--------------------------------------------------------------------------------
+  26:         
+  27:         if a == b:
+  28:             trian += 1
+  29:         if a == c:
+- 30:             trian += 2
++ 30:             trian -= 2
+  31:         if b == c:
+  32:             trian += 3
+  33:         
+  34:         if trian == 0:
+--------------------------------------------------------------------------------
+[0.01559 s] killed by test_killMutant5_12_18_33_47_48 (test_mutationAdequate.MutantAdequateTest)
+   - [#   9] ASR isTriangle: 
+--------------------------------------------------------------------------------
+  28:             trian += 1
+  29:         if a == c:
+  30:             trian += 2
+  31:         if b == c:
+- 32:             trian += 3
++ 32:             trian -= 3
+  33:         
+  34:         if trian == 0:
+  35:             if (Decimal(a) + Decimal(b) <= Decimal(c) or Decimal(a) + Decimal(c) <= Decimal(b) or Decimal(b) + Decimal(c) <= Decimal(a)):
+  36:                 return Triangle.Type.INVALID
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant6_19_43_50_51 (test_mutationAdequate.MutantAdequateTest)
+   - [#  10] COI isTriangle: 
+--------------------------------------------------------------------------------
+  18:     def classify(a, b, c):'''
+  19:         This static method does the actual classification of a triangle, given the lengths
+  20:         of its three sides.
+  21:         '''
+- 22:         if (a <= 0 or b <= 0 or c <= 0):
++ 22:         if not ((a <= 0 or b <= 0 or c <= 0)):
+  23:             return Triangle.Type.INVALID
+  24:         
+  25:         trian = 0
+  26:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant1_2_3_15_16_36_38_40 (test_mutationAdequate.MutantAdequateTest)
+   - [#  11] COI isTriangle: 
+--------------------------------------------------------------------------------
+  23:             return Triangle.Type.INVALID
+  24:         
+  25:         trian = 0
+  26:         
+- 27:         if a == b:
++ 27:         if not (a == b):
+  28:             trian += 1
+  29:         if a == c:
+  30:             trian += 2
+  31:         if b == c:
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant1_2_3_15_16_36_38_40 (test_mutationAdequate.MutantAdequateTest)
+   - [#  12] COI isTriangle: 
+--------------------------------------------------------------------------------
+  25:         trian = 0
+  26:         
+  27:         if a == b:
+  28:             trian += 1
+- 29:         if a == c:
++ 29:         if not (a == c):
+  30:             trian += 2
+  31:         if b == c:
+  32:             trian += 3
+  33:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant1_2_3_15_16_36_38_40 (test_mutationAdequate.MutantAdequateTest)
+   - [#  13] COI isTriangle: 
+--------------------------------------------------------------------------------
+  27:         if a == b:
+  28:             trian += 1
+  29:         if a == c:
+  30:             trian += 2
+- 31:         if b == c:
++ 31:         if not (b == c):
+  32:             trian += 3
+  33:         
+  34:         if trian == 0:
+  35:             if (Decimal(a) + Decimal(b) <= Decimal(c) or Decimal(a) + Decimal(c) <= Decimal(b) or Decimal(b) + Decimal(c) <= Decimal(a)):
+--------------------------------------------------------------------------------
+[0.01562 s] killed by test_killMutant1_2_3_15_16_36_38_40 (test_mutationAdequate.MutantAdequateTest)
+   - [#  14] COI isTriangle: 
+--------------------------------------------------------------------------------
+  30:             trian += 2
+  31:         if b == c:
+  32:             trian += 3
+  33:         
+- 34:         if trian == 0:
++ 34:         if not (trian == 0):
+  35:             if (Decimal(a) + Decimal(b) <= Decimal(c) or Decimal(a) + Decimal(c) <= Decimal(b) or Decimal(b) + Decimal(c) <= Decimal(a)):
+  36:                 return Triangle.Type.INVALID
+  37:             else:
+  38:                 return Triangle.Type.SCALENE
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant1_2_3_15_16_36_38_40 (test_mutationAdequate.MutantAdequateTest)
+   - [#  15] COI isTriangle: 
+--------------------------------------------------------------------------------
+  31:         if b == c:
+  32:             trian += 3
+  33:         
+  34:         if trian == 0:
+- 35:             if (Decimal(a) + Decimal(b) <= Decimal(c) or Decimal(a) + Decimal(c) <= Decimal(b) or Decimal(b) + Decimal(c) <= Decimal(a)):
++ 35:             if not ((Decimal(a) + Decimal(b) <= Decimal(c) or Decimal(a) + Decimal(c) <= Decimal(b) or Decimal(b) + Decimal(c) <= Decimal(a))):
+  36:                 return Triangle.Type.INVALID
+  37:             else:
+  38:                 return Triangle.Type.SCALENE
+  39:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant1_2_3_15_16_36_38_40 (test_mutationAdequate.MutantAdequateTest)
+   - [#  16] COI isTriangle: 
+--------------------------------------------------------------------------------
+  36:                 return Triangle.Type.INVALID
+  37:             else:
+  38:                 return Triangle.Type.SCALENE
+  39:         
+- 40:         if trian > 3:
++ 40:         if not (trian > 3):
+  41:             return Triangle.Type.EQUILATERAL
+  42:         
+  43:         if (trian == 1 and Decimal(a) + Decimal(b) > Decimal(c)):
+  44:             return Triangle.Type.ISOSCELES
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant23_24_25_46 (test_mutationAdequate.MutantAdequateTest)
+   - [#  17] COI isTriangle: 
+--------------------------------------------------------------------------------
+  39:         
+  40:         if trian > 3:
+  41:             return Triangle.Type.EQUILATERAL
+  42:         
+- 43:         if (trian == 1 and Decimal(a) + Decimal(b) > Decimal(c)):
++ 43:         if not ((trian == 1 and Decimal(a) + Decimal(b) > Decimal(c))):
+  44:             return Triangle.Type.ISOSCELES
+  45:         elif (trian == 2 and Decimal(a) + Decimal(c) > Decimal(b)):
+  46:             return Triangle.Type.ISOSCELES
+  47:         elif (trian == 3 and Decimal(b) + Decimal(c) > Decimal(a)):
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant23_24_25_46 (test_mutationAdequate.MutantAdequateTest)
+   - [#  18] COI isTriangle: 
+--------------------------------------------------------------------------------
+  41:             return Triangle.Type.EQUILATERAL
+  42:         
+  43:         if (trian == 1 and Decimal(a) + Decimal(b) > Decimal(c)):
+  44:             return Triangle.Type.ISOSCELES
+- 45:         elif (trian == 2 and Decimal(a) + Decimal(c) > Decimal(b)):
++ 45:         elif not ((trian == 2 and Decimal(a) + Decimal(c) > Decimal(b))):
+  46:             return Triangle.Type.ISOSCELES
+  47:         elif (trian == 3 and Decimal(b) + Decimal(c) > Decimal(a)):
+  48:             return Triangle.Type.ISOSCELES
+  49:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant23_24_25_46 (test_mutationAdequate.MutantAdequateTest)
+   - [#  19] COI isTriangle: 
+--------------------------------------------------------------------------------
+  43:         if (trian == 1 and Decimal(a) + Decimal(b) > Decimal(c)):
+  44:             return Triangle.Type.ISOSCELES
+  45:         elif (trian == 2 and Decimal(a) + Decimal(c) > Decimal(b)):
+  46:             return Triangle.Type.ISOSCELES
+- 47:         elif (trian == 3 and Decimal(b) + Decimal(c) > Decimal(a)):
++ 47:         elif not ((trian == 3 and Decimal(b) + Decimal(c) > Decimal(a))):
+  48:             return Triangle.Type.ISOSCELES
+  49:         
+  50:         return Triangle.Type.INVALID
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant23_24_25_46 (test_mutationAdequate.MutantAdequateTest)
+   - [#  20] DDL isTriangle: 
+--------------------------------------------------------------------------------
+  13:         EQUILATERAL = 2
+  14:         ISOSCELES = 3
+  15:     
+  16:     
+- 17:     @staticmethod
+- 18:     def classify(a, b, c):'''
++ 17:     def classify(a, b, c):
++ 18:         '''
+  19:         This static method does the actual classification of a triangle, given the lengths
+  20:         of its three sides.
+  21:         '''
+  22:         if (a <= 0 or b <= 0 or c <= 0):
+--------------------------------------------------------------------------------
+[0.00000 s] survived
+   - [#  21] LCR isTriangle: 
+--------------------------------------------------------------------------------
+  18:     def classify(a, b, c):'''
+  19:         This static method does the actual classification of a triangle, given the lengths
+  20:         of its three sides.
+  21:         '''
+- 22:         if (a <= 0 or b <= 0 or c <= 0):
++ 22:         if (a <= 0 and b <= 0 and c <= 0):
+  23:             return Triangle.Type.INVALID
+  24:         
+  25:         trian = 0
+  26:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant29 (test_mutationAdequate.MutantAdequateTest)
+   - [#  22] LCR isTriangle: 
+--------------------------------------------------------------------------------
+  31:         if b == c:
+  32:             trian += 3
+  33:         
+  34:         if trian == 0:
+- 35:             if (Decimal(a) + Decimal(b) <= Decimal(c) or Decimal(a) + Decimal(c) <= Decimal(b) or Decimal(b) + Decimal(c) <= Decimal(a)):
++ 35:             if (Decimal(a) + Decimal(b) <= Decimal(c) and Decimal(a) + Decimal(c) <= Decimal(b) and Decimal(b) + Decimal(c) <= Decimal(a)):
+  36:                 return Triangle.Type.INVALID
+  37:             else:
+  38:                 return Triangle.Type.SCALENE
+  39:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant22_41 (test_mutationAdequate.MutantAdequateTest)
+   - [#  23] LCR isTriangle: 
+--------------------------------------------------------------------------------
+  39:         
+  40:         if trian > 3:
+  41:             return Triangle.Type.EQUILATERAL
+  42:         
+- 43:         if (trian == 1 and Decimal(a) + Decimal(b) > Decimal(c)):
++ 43:         if (trian == 1 or Decimal(a) + Decimal(b) > Decimal(c)):
+  44:             return Triangle.Type.ISOSCELES
+  45:         elif (trian == 2 and Decimal(a) + Decimal(c) > Decimal(b)):
+  46:             return Triangle.Type.ISOSCELES
+  47:         elif (trian == 3 and Decimal(b) + Decimal(c) > Decimal(a)):
+--------------------------------------------------------------------------------
+[0.01562 s] killed by test_killMutant23_24_25_46 (test_mutationAdequate.MutantAdequateTest)
+   - [#  24] LCR isTriangle: 
+--------------------------------------------------------------------------------
+  41:             return Triangle.Type.EQUILATERAL
+  42:         
+  43:         if (trian == 1 and Decimal(a) + Decimal(b) > Decimal(c)):
+  44:             return Triangle.Type.ISOSCELES
+- 45:         elif (trian == 2 and Decimal(a) + Decimal(c) > Decimal(b)):
++ 45:         elif (trian == 2 or Decimal(a) + Decimal(c) > Decimal(b)):
+  46:             return Triangle.Type.ISOSCELES
+  47:         elif (trian == 3 and Decimal(b) + Decimal(c) > Decimal(a)):
+  48:             return Triangle.Type.ISOSCELES
+  49:         
+--------------------------------------------------------------------------------
+[0.01559 s] killed by test_killMutant23_24_25_46 (test_mutationAdequate.MutantAdequateTest)
+   - [#  25] LCR isTriangle: 
+--------------------------------------------------------------------------------
+  43:         if (trian == 1 and Decimal(a) + Decimal(b) > Decimal(c)):
+  44:             return Triangle.Type.ISOSCELES
+  45:         elif (trian == 2 and Decimal(a) + Decimal(c) > Decimal(b)):
+  46:             return Triangle.Type.ISOSCELES
+- 47:         elif (trian == 3 and Decimal(b) + Decimal(c) > Decimal(a)):
++ 47:         elif (trian == 3 or Decimal(b) + Decimal(c) > Decimal(a)):
+  48:             return Triangle.Type.ISOSCELES
+  49:         
+  50:         return Triangle.Type.INVALID
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant23_24_25_46 (test_mutationAdequate.MutantAdequateTest)
+   - [#  26] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  18:     def classify(a, b, c):'''
+  19:         This static method does the actual classification of a triangle, given the lengths
+  20:         of its three sides.
+  21:         '''
+- 22:         if (a <= 0 or b <= 0 or c <= 0):
++ 22:         if (a >= 0 or b <= 0 or c <= 0):
+  23:             return Triangle.Type.INVALID
+  24:         
+  25:         trian = 0
+  26:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant1_2_3_15_16_36_38_40 (test_mutationAdequate.MutantAdequateTest)
+   - [#  27] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  18:     def classify(a, b, c):'''
+  19:         This static method does the actual classification of a triangle, given the lengths
+  20:         of its three sides.
+  21:         '''
+- 22:         if (a <= 0 or b <= 0 or c <= 0):
++ 22:         if (a < 0 or b <= 0 or c <= 0):
+  23:             return Triangle.Type.INVALID
+  24:         
+  25:         trian = 0
+  26:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killmutant21_27_28 (test_mutationAdequate.MutantAdequateTest)
+   - [#  28] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  18:     def classify(a, b, c):'''
+  19:         This static method does the actual classification of a triangle, given the lengths
+  20:         of its three sides.
+  21:         '''
+- 22:         if (a <= 0 or b <= 0 or c <= 0):
++ 22:         if (a <= 0 or b >= 0 or c <= 0):
+  23:             return Triangle.Type.INVALID
+  24:         
+  25:         trian = 0
+  26:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant1_2_3_15_16_36_38_40 (test_mutationAdequate.MutantAdequateTest)
+   - [#  29] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  18:     def classify(a, b, c):'''
+  19:         This static method does the actual classification of a triangle, given the lengths
+  20:         of its three sides.
+  21:         '''
+- 22:         if (a <= 0 or b <= 0 or c <= 0):
++ 22:         if (a <= 0 or b < 0 or c <= 0):
+  23:             return Triangle.Type.INVALID
+  24:         
+  25:         trian = 0
+  26:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant29 (test_mutationAdequate.MutantAdequateTest)
+   - [#  30] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  18:     def classify(a, b, c):'''
+  19:         This static method does the actual classification of a triangle, given the lengths
+  20:         of its three sides.
+  21:         '''
+- 22:         if (a <= 0 or b <= 0 or c <= 0):
++ 22:         if (a <= 0 or b <= 0 or c >= 0):
+  23:             return Triangle.Type.INVALID
+  24:         
+  25:         trian = 0
+  26:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant1_2_3_15_16_36_38_40 (test_mutationAdequate.MutantAdequateTest)
+   - [#  31] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  18:     def classify(a, b, c):'''
+  19:         This static method does the actual classification of a triangle, given the lengths
+  20:         of its three sides.
+  21:         '''
+- 22:         if (a <= 0 or b <= 0 or c <= 0):
++ 22:         if (a <= 0 or b <= 0 or c < 0):
+  23:             return Triangle.Type.INVALID
+  24:         
+  25:         trian = 0
+  26:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant31 (test_mutationAdequate.MutantAdequateTest)
+   - [#  32] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  23:             return Triangle.Type.INVALID
+  24:         
+  25:         trian = 0
+  26:         
+- 27:         if a == b:
++ 27:         if a != b:
+  28:             trian += 1
+  29:         if a == c:
+  30:             trian += 2
+  31:         if b == c:
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant1_2_3_15_16_36_38_40 (test_mutationAdequate.MutantAdequateTest)
+   - [#  33] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  25:         trian = 0
+  26:         
+  27:         if a == b:
+  28:             trian += 1
+- 29:         if a == c:
++ 29:         if a != c:
+  30:             trian += 2
+  31:         if b == c:
+  32:             trian += 3
+  33:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant1_2_3_15_16_36_38_40 (test_mutationAdequate.MutantAdequateTest)
+   - [#  34] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  27:         if a == b:
+  28:             trian += 1
+  29:         if a == c:
+  30:             trian += 2
+- 31:         if b == c:
++ 31:         if b != c:
+  32:             trian += 3
+  33:         
+  34:         if trian == 0:
+  35:             if (Decimal(a) + Decimal(b) <= Decimal(c) or Decimal(a) + Decimal(c) <= Decimal(b) or Decimal(b) + Decimal(c) <= Decimal(a)):
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant1_2_3_15_16_36_38_40 (test_mutationAdequate.MutantAdequateTest)
+   - [#  35] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  30:             trian += 2
+  31:         if b == c:
+  32:             trian += 3
+  33:         
+- 34:         if trian == 0:
++ 34:         if trian != 0:
+  35:             if (Decimal(a) + Decimal(b) <= Decimal(c) or Decimal(a) + Decimal(c) <= Decimal(b) or Decimal(b) + Decimal(c) <= Decimal(a)):
+  36:                 return Triangle.Type.INVALID
+  37:             else:
+  38:                 return Triangle.Type.SCALENE
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant1_2_3_15_16_36_38_40 (test_mutationAdequate.MutantAdequateTest)
+   - [#  36] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  31:         if b == c:
+  32:             trian += 3
+  33:         
+  34:         if trian == 0:
+- 35:             if (Decimal(a) + Decimal(b) <= Decimal(c) or Decimal(a) + Decimal(c) <= Decimal(b) or Decimal(b) + Decimal(c) <= Decimal(a)):
++ 35:             if (Decimal(a) + Decimal(b) >= Decimal(c) or Decimal(a) + Decimal(c) <= Decimal(b) or Decimal(b) + Decimal(c) <= Decimal(a)):
+  36:                 return Triangle.Type.INVALID
+  37:             else:
+  38:                 return Triangle.Type.SCALENE
+  39:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant1_2_3_15_16_36_38_40 (test_mutationAdequate.MutantAdequateTest)
+   - [#  37] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  31:         if b == c:
+  32:             trian += 3
+  33:         
+  34:         if trian == 0:
+- 35:             if (Decimal(a) + Decimal(b) <= Decimal(c) or Decimal(a) + Decimal(c) <= Decimal(b) or Decimal(b) + Decimal(c) <= Decimal(a)):
++ 35:             if (Decimal(a) + Decimal(b) < Decimal(c) or Decimal(a) + Decimal(c) <= Decimal(b) or Decimal(b) + Decimal(c) <= Decimal(a)):
+  36:                 return Triangle.Type.INVALID
+  37:             else:
+  38:                 return Triangle.Type.SCALENE
+  39:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant37 (test_mutationAdequate.MutantAdequateTest)
+   - [#  38] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  31:         if b == c:
+  32:             trian += 3
+  33:         
+  34:         if trian == 0:
+- 35:             if (Decimal(a) + Decimal(b) <= Decimal(c) or Decimal(a) + Decimal(c) <= Decimal(b) or Decimal(b) + Decimal(c) <= Decimal(a)):
++ 35:             if (Decimal(a) + Decimal(b) <= Decimal(c) or Decimal(a) + Decimal(c) >= Decimal(b) or Decimal(b) + Decimal(c) <= Decimal(a)):
+  36:                 return Triangle.Type.INVALID
+  37:             else:
+  38:                 return Triangle.Type.SCALENE
+  39:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant1_2_3_15_16_36_38_40 (test_mutationAdequate.MutantAdequateTest)
+   - [#  39] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  31:         if b == c:
+  32:             trian += 3
+  33:         
+  34:         if trian == 0:
+- 35:             if (Decimal(a) + Decimal(b) <= Decimal(c) or Decimal(a) + Decimal(c) <= Decimal(b) or Decimal(b) + Decimal(c) <= Decimal(a)):
++ 35:             if (Decimal(a) + Decimal(b) <= Decimal(c) or Decimal(a) + Decimal(c) < Decimal(b) or Decimal(b) + Decimal(c) <= Decimal(a)):
+  36:                 return Triangle.Type.INVALID
+  37:             else:
+  38:                 return Triangle.Type.SCALENE
+  39:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant39 (test_mutationAdequate.MutantAdequateTest)
+   - [#  40] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  31:         if b == c:
+  32:             trian += 3
+  33:         
+  34:         if trian == 0:
+- 35:             if (Decimal(a) + Decimal(b) <= Decimal(c) or Decimal(a) + Decimal(c) <= Decimal(b) or Decimal(b) + Decimal(c) <= Decimal(a)):
++ 35:             if (Decimal(a) + Decimal(b) <= Decimal(c) or Decimal(a) + Decimal(c) <= Decimal(b) or Decimal(b) + Decimal(c) >= Decimal(a)):
+  36:                 return Triangle.Type.INVALID
+  37:             else:
+  38:                 return Triangle.Type.SCALENE
+  39:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant1_2_3_15_16_36_38_40 (test_mutationAdequate.MutantAdequateTest)
+   - [#  41] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  31:         if b == c:
+  32:             trian += 3
+  33:         
+  34:         if trian == 0:
+- 35:             if (Decimal(a) + Decimal(b) <= Decimal(c) or Decimal(a) + Decimal(c) <= Decimal(b) or Decimal(b) + Decimal(c) <= Decimal(a)):
++ 35:             if (Decimal(a) + Decimal(b) <= Decimal(c) or Decimal(a) + Decimal(c) <= Decimal(b) or Decimal(b) + Decimal(c) < Decimal(a)):
+  36:                 return Triangle.Type.INVALID
+  37:             else:
+  38:                 return Triangle.Type.SCALENE
+  39:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant22_41 (test_mutationAdequate.MutantAdequateTest)
+   - [#  42] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  36:                 return Triangle.Type.INVALID
+  37:             else:
+  38:                 return Triangle.Type.SCALENE
+  39:         
+- 40:         if trian > 3:
++ 40:         if trian < 3:
+  41:             return Triangle.Type.EQUILATERAL
+  42:         
+  43:         if (trian == 1 and Decimal(a) + Decimal(b) > Decimal(c)):
+  44:             return Triangle.Type.ISOSCELES
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant23_24_25_46 (test_mutationAdequate.MutantAdequateTest)
+   - [#  43] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  36:                 return Triangle.Type.INVALID
+  37:             else:
+  38:                 return Triangle.Type.SCALENE
+  39:         
+- 40:         if trian > 3:
++ 40:         if trian >= 3:
+  41:             return Triangle.Type.EQUILATERAL
+  42:         
+  43:         if (trian == 1 and Decimal(a) + Decimal(b) > Decimal(c)):
+  44:             return Triangle.Type.ISOSCELES
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant52 (test_mutationAdequate.MutantAdequateTest)
+   - [#  44] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  39:         
+  40:         if trian > 3:
+  41:             return Triangle.Type.EQUILATERAL
+  42:         
+- 43:         if (trian == 1 and Decimal(a) + Decimal(b) > Decimal(c)):
++ 43:         if (trian != 1 and Decimal(a) + Decimal(b) > Decimal(c)):
+  44:             return Triangle.Type.ISOSCELES
+  45:         elif (trian == 2 and Decimal(a) + Decimal(c) > Decimal(b)):
+  46:             return Triangle.Type.ISOSCELES
+  47:         elif (trian == 3 and Decimal(b) + Decimal(c) > Decimal(a)):
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant49 (test_mutationAdequate.MutantAdequateTest)
+   - [#  45] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  39:         
+  40:         if trian > 3:
+  41:             return Triangle.Type.EQUILATERAL
+  42:         
+- 43:         if (trian == 1 and Decimal(a) + Decimal(b) > Decimal(c)):
++ 43:         if (trian == 1 and Decimal(a) + Decimal(b) < Decimal(c)):
+  44:             return Triangle.Type.ISOSCELES
+  45:         elif (trian == 2 and Decimal(a) + Decimal(c) > Decimal(b)):
+  46:             return Triangle.Type.ISOSCELES
+  47:         elif (trian == 3 and Decimal(b) + Decimal(c) > Decimal(a)):
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant4_7_11_17_32_44_45 (test_mutationAdequate.MutantAdequateTest)
+   - [#  46] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  39:         
+  40:         if trian > 3:
+  41:             return Triangle.Type.EQUILATERAL
+  42:         
+- 43:         if (trian == 1 and Decimal(a) + Decimal(b) > Decimal(c)):
++ 43:         if (trian == 1 and Decimal(a) + Decimal(b) >= Decimal(c)):
+  44:             return Triangle.Type.ISOSCELES
+  45:         elif (trian == 2 and Decimal(a) + Decimal(c) > Decimal(b)):
+  46:             return Triangle.Type.ISOSCELES
+  47:         elif (trian == 3 and Decimal(b) + Decimal(c) > Decimal(a)):
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant23_24_25_46 (test_mutationAdequate.MutantAdequateTest)
+   - [#  47] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  41:             return Triangle.Type.EQUILATERAL
+  42:         
+  43:         if (trian == 1 and Decimal(a) + Decimal(b) > Decimal(c)):
+  44:             return Triangle.Type.ISOSCELES
+- 45:         elif (trian == 2 and Decimal(a) + Decimal(c) > Decimal(b)):
++ 45:         elif (trian != 2 and Decimal(a) + Decimal(c) > Decimal(b)):
+  46:             return Triangle.Type.ISOSCELES
+  47:         elif (trian == 3 and Decimal(b) + Decimal(c) > Decimal(a)):
+  48:             return Triangle.Type.ISOSCELES
+  49:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant23_24_25_46 (test_mutationAdequate.MutantAdequateTest)
+   - [#  48] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  41:             return Triangle.Type.EQUILATERAL
+  42:         
+  43:         if (trian == 1 and Decimal(a) + Decimal(b) > Decimal(c)):
+  44:             return Triangle.Type.ISOSCELES
+- 45:         elif (trian == 2 and Decimal(a) + Decimal(c) > Decimal(b)):
++ 45:         elif (trian == 2 and Decimal(a) + Decimal(c) < Decimal(b)):
+  46:             return Triangle.Type.ISOSCELES
+  47:         elif (trian == 3 and Decimal(b) + Decimal(c) > Decimal(a)):
+  48:             return Triangle.Type.ISOSCELES
+  49:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant5_12_18_33_47_48 (test_mutationAdequate.MutantAdequateTest)
+   - [#  49] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  41:             return Triangle.Type.EQUILATERAL
+  42:         
+  43:         if (trian == 1 and Decimal(a) + Decimal(b) > Decimal(c)):
+  44:             return Triangle.Type.ISOSCELES
+- 45:         elif (trian == 2 and Decimal(a) + Decimal(c) > Decimal(b)):
++ 45:         elif (trian == 2 and Decimal(a) + Decimal(c) >= Decimal(b)):
+  46:             return Triangle.Type.ISOSCELES
+  47:         elif (trian == 3 and Decimal(b) + Decimal(c) > Decimal(a)):
+  48:             return Triangle.Type.ISOSCELES
+  49:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant49 (test_mutationAdequate.MutantAdequateTest)
+   - [#  50] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  43:         if (trian == 1 and Decimal(a) + Decimal(b) > Decimal(c)):
+  44:             return Triangle.Type.ISOSCELES
+  45:         elif (trian == 2 and Decimal(a) + Decimal(c) > Decimal(b)):
+  46:             return Triangle.Type.ISOSCELES
+- 47:         elif (trian == 3 and Decimal(b) + Decimal(c) > Decimal(a)):
++ 47:         elif (trian != 3 and Decimal(b) + Decimal(c) > Decimal(a)):
+  48:             return Triangle.Type.ISOSCELES
+  49:         
+  50:         return Triangle.Type.INVALID
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant23_24_25_46 (test_mutationAdequate.MutantAdequateTest)
+   - [#  51] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  43:         if (trian == 1 and Decimal(a) + Decimal(b) > Decimal(c)):
+  44:             return Triangle.Type.ISOSCELES
+  45:         elif (trian == 2 and Decimal(a) + Decimal(c) > Decimal(b)):
+  46:             return Triangle.Type.ISOSCELES
+- 47:         elif (trian == 3 and Decimal(b) + Decimal(c) > Decimal(a)):
++ 47:         elif (trian == 3 and Decimal(b) + Decimal(c) < Decimal(a)):
+  48:             return Triangle.Type.ISOSCELES
+  49:         
+  50:         return Triangle.Type.INVALID
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant6_19_43_50_51 (test_mutationAdequate.MutantAdequateTest)
+   - [#  52] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  43:         if (trian == 1 and Decimal(a) + Decimal(b) > Decimal(c)):
+  44:             return Triangle.Type.ISOSCELES
+  45:         elif (trian == 2 and Decimal(a) + Decimal(c) > Decimal(b)):
+  46:             return Triangle.Type.ISOSCELES
+- 47:         elif (trian == 3 and Decimal(b) + Decimal(c) > Decimal(a)):
++ 47:         elif (trian == 3 and Decimal(b) + Decimal(c) >= Decimal(a)):
+  48:             return Triangle.Type.ISOSCELES
+  49:         
+  50:         return Triangle.Type.INVALID
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant52 (test_mutationAdequate.MutantAdequateTest)
+[*] Mutation score [0.96856 s]: 98.1%
+   - all: 52
+   - killed: 51 (98.1%)
+   - survived: 1 (1.9%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)
+[*] Start mutation process:
+   - targets: isTriangle
+   - tests: test_mutationAdequate
+[*] 14 tests passed:
+   - test_mutationAdequate [0.00000 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR isTriangle: 
+--------------------------------------------------------------------------------
+  31:         if b == c:
+  32:             trian += 3
+  33:         
+  34:         if trian == 0:
+- 35:             if (Decimal(a) + Decimal(b) <= Decimal(c) or Decimal(a) + Decimal(c) <= Decimal(b) or Decimal(b) + Decimal(c) <= Decimal(a)):
++ 35:             if (Decimal(a) - Decimal(b) <= Decimal(c) or Decimal(a) + Decimal(c) <= Decimal(b) or Decimal(b) + Decimal(c) <= Decimal(a)):
+  36:                 return Triangle.Type.INVALID
+  37:             else:
+  38:                 return Triangle.Type.SCALENE
+  39:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant1_2_3_15_16_36_38_40 (test_mutationAdequate.MutantAdequateTest)
+   - [#   2] AOR isTriangle: 
+--------------------------------------------------------------------------------
+  31:         if b == c:
+  32:             trian += 3
+  33:         
+  34:         if trian == 0:
+- 35:             if (Decimal(a) + Decimal(b) <= Decimal(c) or Decimal(a) + Decimal(c) <= Decimal(b) or Decimal(b) + Decimal(c) <= Decimal(a)):
++ 35:             if (Decimal(a) + Decimal(b) <= Decimal(c) or Decimal(a) - Decimal(c) <= Decimal(b) or Decimal(b) + Decimal(c) <= Decimal(a)):
+  36:                 return Triangle.Type.INVALID
+  37:             else:
+  38:                 return Triangle.Type.SCALENE
+  39:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant1_2_3_15_16_36_38_40 (test_mutationAdequate.MutantAdequateTest)
+   - [#   3] AOR isTriangle: 
+--------------------------------------------------------------------------------
+  31:         if b == c:
+  32:             trian += 3
+  33:         
+  34:         if trian == 0:
+- 35:             if (Decimal(a) + Decimal(b) <= Decimal(c) or Decimal(a) + Decimal(c) <= Decimal(b) or Decimal(b) + Decimal(c) <= Decimal(a)):
++ 35:             if (Decimal(a) + Decimal(b) <= Decimal(c) or Decimal(a) + Decimal(c) <= Decimal(b) or Decimal(b) - Decimal(c) <= Decimal(a)):
+  36:                 return Triangle.Type.INVALID
+  37:             else:
+  38:                 return Triangle.Type.SCALENE
+  39:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant1_2_3_15_16_36_38_40 (test_mutationAdequate.MutantAdequateTest)
+   - [#   4] AOR isTriangle: 
+--------------------------------------------------------------------------------
+  39:         
+  40:         if trian > 3:
+  41:             return Triangle.Type.EQUILATERAL
+  42:         
+- 43:         if (trian == 1 and Decimal(a) + Decimal(b) > Decimal(c)):
++ 43:         if (trian == 1 and Decimal(a) - Decimal(b) > Decimal(c)):
+  44:             return Triangle.Type.ISOSCELES
+  45:         elif (trian == 2 and Decimal(a) + Decimal(c) > Decimal(b)):
+  46:             return Triangle.Type.ISOSCELES
+  47:         elif (trian == 3 and Decimal(b) + Decimal(c) > Decimal(a)):
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant4_7_11_17_32_44_45 (test_mutationAdequate.MutantAdequateTest)
+   - [#   5] AOR isTriangle: 
+--------------------------------------------------------------------------------
+  41:             return Triangle.Type.EQUILATERAL
+  42:         
+  43:         if (trian == 1 and Decimal(a) + Decimal(b) > Decimal(c)):
+  44:             return Triangle.Type.ISOSCELES
+- 45:         elif (trian == 2 and Decimal(a) + Decimal(c) > Decimal(b)):
++ 45:         elif (trian == 2 and Decimal(a) - Decimal(c) > Decimal(b)):
+  46:             return Triangle.Type.ISOSCELES
+  47:         elif (trian == 3 and Decimal(b) + Decimal(c) > Decimal(a)):
+  48:             return Triangle.Type.ISOSCELES
+  49:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant5_12_18_33_47_48 (test_mutationAdequate.MutantAdequateTest)
+   - [#   6] AOR isTriangle: 
+--------------------------------------------------------------------------------
+  43:         if (trian == 1 and Decimal(a) + Decimal(b) > Decimal(c)):
+  44:             return Triangle.Type.ISOSCELES
+  45:         elif (trian == 2 and Decimal(a) + Decimal(c) > Decimal(b)):
+  46:             return Triangle.Type.ISOSCELES
+- 47:         elif (trian == 3 and Decimal(b) + Decimal(c) > Decimal(a)):
++ 47:         elif (trian == 3 and Decimal(b) - Decimal(c) > Decimal(a)):
+  48:             return Triangle.Type.ISOSCELES
+  49:         
+  50:         return Triangle.Type.INVALID
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant6_19_43_50_51 (test_mutationAdequate.MutantAdequateTest)
+   - [#   7] ASR isTriangle: 
+--------------------------------------------------------------------------------
+  24:         
+  25:         trian = 0
+  26:         
+  27:         if a == b:
+- 28:             trian += 1
++ 28:             trian -= 1
+  29:         if a == c:
+  30:             trian += 2
+  31:         if b == c:
+  32:             trian += 3
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant4_7_11_17_32_44_45 (test_mutationAdequate.MutantAdequateTest)
+   - [#   8] ASR isTriangle: 
+--------------------------------------------------------------------------------
+  26:         
+  27:         if a == b:
+  28:             trian += 1
+  29:         if a == c:
+- 30:             trian += 2
++ 30:             trian -= 2
+  31:         if b == c:
+  32:             trian += 3
+  33:         
+  34:         if trian == 0:
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant5_12_18_33_47_48 (test_mutationAdequate.MutantAdequateTest)
+   - [#   9] ASR isTriangle: 
+--------------------------------------------------------------------------------
+  28:             trian += 1
+  29:         if a == c:
+  30:             trian += 2
+  31:         if b == c:
+- 32:             trian += 3
++ 32:             trian -= 3
+  33:         
+  34:         if trian == 0:
+  35:             if (Decimal(a) + Decimal(b) <= Decimal(c) or Decimal(a) + Decimal(c) <= Decimal(b) or Decimal(b) + Decimal(c) <= Decimal(a)):
+  36:                 return Triangle.Type.INVALID
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant6_19_43_50_51 (test_mutationAdequate.MutantAdequateTest)
+   - [#  10] COI isTriangle: 
+--------------------------------------------------------------------------------
+  18:     def classify(a, b, c):'''
+  19:         This static method does the actual classification of a triangle, given the lengths
+  20:         of its three sides.
+  21:         '''
+- 22:         if (a <= 0 or b <= 0 or c <= 0):
++ 22:         if not ((a <= 0 or b <= 0 or c <= 0)):
+  23:             return Triangle.Type.INVALID
+  24:         
+  25:         trian = 0
+  26:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant1_2_3_15_16_36_38_40 (test_mutationAdequate.MutantAdequateTest)
+   - [#  11] COI isTriangle: 
+--------------------------------------------------------------------------------
+  23:             return Triangle.Type.INVALID
+  24:         
+  25:         trian = 0
+  26:         
+- 27:         if a == b:
++ 27:         if not (a == b):
+  28:             trian += 1
+  29:         if a == c:
+  30:             trian += 2
+  31:         if b == c:
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant1_2_3_15_16_36_38_40 (test_mutationAdequate.MutantAdequateTest)
+   - [#  12] COI isTriangle: 
+--------------------------------------------------------------------------------
+  25:         trian = 0
+  26:         
+  27:         if a == b:
+  28:             trian += 1
+- 29:         if a == c:
++ 29:         if not (a == c):
+  30:             trian += 2
+  31:         if b == c:
+  32:             trian += 3
+  33:         
+--------------------------------------------------------------------------------
+[0.01562 s] killed by test_killMutant1_2_3_15_16_36_38_40 (test_mutationAdequate.MutantAdequateTest)
+   - [#  13] COI isTriangle: 
+--------------------------------------------------------------------------------
+  27:         if a == b:
+  28:             trian += 1
+  29:         if a == c:
+  30:             trian += 2
+- 31:         if b == c:
++ 31:         if not (b == c):
+  32:             trian += 3
+  33:         
+  34:         if trian == 0:
+  35:             if (Decimal(a) + Decimal(b) <= Decimal(c) or Decimal(a) + Decimal(c) <= Decimal(b) or Decimal(b) + Decimal(c) <= Decimal(a)):
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant1_2_3_15_16_36_38_40 (test_mutationAdequate.MutantAdequateTest)
+   - [#  14] COI isTriangle: 
+--------------------------------------------------------------------------------
+  30:             trian += 2
+  31:         if b == c:
+  32:             trian += 3
+  33:         
+- 34:         if trian == 0:
++ 34:         if not (trian == 0):
+  35:             if (Decimal(a) + Decimal(b) <= Decimal(c) or Decimal(a) + Decimal(c) <= Decimal(b) or Decimal(b) + Decimal(c) <= Decimal(a)):
+  36:                 return Triangle.Type.INVALID
+  37:             else:
+  38:                 return Triangle.Type.SCALENE
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant1_2_3_15_16_36_38_40 (test_mutationAdequate.MutantAdequateTest)
+   - [#  15] COI isTriangle: 
+--------------------------------------------------------------------------------
+  31:         if b == c:
+  32:             trian += 3
+  33:         
+  34:         if trian == 0:
+- 35:             if (Decimal(a) + Decimal(b) <= Decimal(c) or Decimal(a) + Decimal(c) <= Decimal(b) or Decimal(b) + Decimal(c) <= Decimal(a)):
++ 35:             if not ((Decimal(a) + Decimal(b) <= Decimal(c) or Decimal(a) + Decimal(c) <= Decimal(b) or Decimal(b) + Decimal(c) <= Decimal(a))):
+  36:                 return Triangle.Type.INVALID
+  37:             else:
+  38:                 return Triangle.Type.SCALENE
+  39:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant1_2_3_15_16_36_38_40 (test_mutationAdequate.MutantAdequateTest)
+   - [#  16] COI isTriangle: 
+--------------------------------------------------------------------------------
+  36:                 return Triangle.Type.INVALID
+  37:             else:
+  38:                 return Triangle.Type.SCALENE
+  39:         
+- 40:         if trian > 3:
++ 40:         if not (trian > 3):
+  41:             return Triangle.Type.EQUILATERAL
+  42:         
+  43:         if (trian == 1 and Decimal(a) + Decimal(b) > Decimal(c)):
+  44:             return Triangle.Type.ISOSCELES
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant23_24_25_46 (test_mutationAdequate.MutantAdequateTest)
+   - [#  17] COI isTriangle: 
+--------------------------------------------------------------------------------
+  39:         
+  40:         if trian > 3:
+  41:             return Triangle.Type.EQUILATERAL
+  42:         
+- 43:         if (trian == 1 and Decimal(a) + Decimal(b) > Decimal(c)):
++ 43:         if not ((trian == 1 and Decimal(a) + Decimal(b) > Decimal(c))):
+  44:             return Triangle.Type.ISOSCELES
+  45:         elif (trian == 2 and Decimal(a) + Decimal(c) > Decimal(b)):
+  46:             return Triangle.Type.ISOSCELES
+  47:         elif (trian == 3 and Decimal(b) + Decimal(c) > Decimal(a)):
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant23_24_25_46 (test_mutationAdequate.MutantAdequateTest)
+   - [#  18] COI isTriangle: 
+--------------------------------------------------------------------------------
+  41:             return Triangle.Type.EQUILATERAL
+  42:         
+  43:         if (trian == 1 and Decimal(a) + Decimal(b) > Decimal(c)):
+  44:             return Triangle.Type.ISOSCELES
+- 45:         elif (trian == 2 and Decimal(a) + Decimal(c) > Decimal(b)):
++ 45:         elif not ((trian == 2 and Decimal(a) + Decimal(c) > Decimal(b))):
+  46:             return Triangle.Type.ISOSCELES
+  47:         elif (trian == 3 and Decimal(b) + Decimal(c) > Decimal(a)):
+  48:             return Triangle.Type.ISOSCELES
+  49:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant23_24_25_46 (test_mutationAdequate.MutantAdequateTest)
+   - [#  19] COI isTriangle: 
+--------------------------------------------------------------------------------
+  43:         if (trian == 1 and Decimal(a) + Decimal(b) > Decimal(c)):
+  44:             return Triangle.Type.ISOSCELES
+  45:         elif (trian == 2 and Decimal(a) + Decimal(c) > Decimal(b)):
+  46:             return Triangle.Type.ISOSCELES
+- 47:         elif (trian == 3 and Decimal(b) + Decimal(c) > Decimal(a)):
++ 47:         elif not ((trian == 3 and Decimal(b) + Decimal(c) > Decimal(a))):
+  48:             return Triangle.Type.ISOSCELES
+  49:         
+  50:         return Triangle.Type.INVALID
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant23_24_25_46 (test_mutationAdequate.MutantAdequateTest)
+   - [#  20] DDL isTriangle: 
+--------------------------------------------------------------------------------
+  13:         EQUILATERAL = 2
+  14:         ISOSCELES = 3
+  15:     
+  16:     
+- 17:     @staticmethod
+- 18:     def classify(a, b, c):'''
++ 17:     def classify(a, b, c):
++ 18:         '''
+  19:         This static method does the actual classification of a triangle, given the lengths
+  20:         of its three sides.
+  21:         '''
+  22:         if (a <= 0 or b <= 0 or c <= 0):
+--------------------------------------------------------------------------------
+[0.00000 s] survived
+   - [#  21] LCR isTriangle: 
+--------------------------------------------------------------------------------
+  18:     def classify(a, b, c):'''
+  19:         This static method does the actual classification of a triangle, given the lengths
+  20:         of its three sides.
+  21:         '''
+- 22:         if (a <= 0 or b <= 0 or c <= 0):
++ 22:         if (a <= 0 and b <= 0 and c <= 0):
+  23:             return Triangle.Type.INVALID
+  24:         
+  25:         trian = 0
+  26:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant29 (test_mutationAdequate.MutantAdequateTest)
+   - [#  22] LCR isTriangle: 
+--------------------------------------------------------------------------------
+  31:         if b == c:
+  32:             trian += 3
+  33:         
+  34:         if trian == 0:
+- 35:             if (Decimal(a) + Decimal(b) <= Decimal(c) or Decimal(a) + Decimal(c) <= Decimal(b) or Decimal(b) + Decimal(c) <= Decimal(a)):
++ 35:             if (Decimal(a) + Decimal(b) <= Decimal(c) and Decimal(a) + Decimal(c) <= Decimal(b) and Decimal(b) + Decimal(c) <= Decimal(a)):
+  36:                 return Triangle.Type.INVALID
+  37:             else:
+  38:                 return Triangle.Type.SCALENE
+  39:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant22_41 (test_mutationAdequate.MutantAdequateTest)
+   - [#  23] LCR isTriangle: 
+--------------------------------------------------------------------------------
+  39:         
+  40:         if trian > 3:
+  41:             return Triangle.Type.EQUILATERAL
+  42:         
+- 43:         if (trian == 1 and Decimal(a) + Decimal(b) > Decimal(c)):
++ 43:         if (trian == 1 or Decimal(a) + Decimal(b) > Decimal(c)):
+  44:             return Triangle.Type.ISOSCELES
+  45:         elif (trian == 2 and Decimal(a) + Decimal(c) > Decimal(b)):
+  46:             return Triangle.Type.ISOSCELES
+  47:         elif (trian == 3 and Decimal(b) + Decimal(c) > Decimal(a)):
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant23_24_25_46 (test_mutationAdequate.MutantAdequateTest)
+   - [#  24] LCR isTriangle: 
+--------------------------------------------------------------------------------
+  41:             return Triangle.Type.EQUILATERAL
+  42:         
+  43:         if (trian == 1 and Decimal(a) + Decimal(b) > Decimal(c)):
+  44:             return Triangle.Type.ISOSCELES
+- 45:         elif (trian == 2 and Decimal(a) + Decimal(c) > Decimal(b)):
++ 45:         elif (trian == 2 or Decimal(a) + Decimal(c) > Decimal(b)):
+  46:             return Triangle.Type.ISOSCELES
+  47:         elif (trian == 3 and Decimal(b) + Decimal(c) > Decimal(a)):
+  48:             return Triangle.Type.ISOSCELES
+  49:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant23_24_25_46 (test_mutationAdequate.MutantAdequateTest)
+   - [#  25] LCR isTriangle: 
+--------------------------------------------------------------------------------
+  43:         if (trian == 1 and Decimal(a) + Decimal(b) > Decimal(c)):
+  44:             return Triangle.Type.ISOSCELES
+  45:         elif (trian == 2 and Decimal(a) + Decimal(c) > Decimal(b)):
+  46:             return Triangle.Type.ISOSCELES
+- 47:         elif (trian == 3 and Decimal(b) + Decimal(c) > Decimal(a)):
++ 47:         elif (trian == 3 or Decimal(b) + Decimal(c) > Decimal(a)):
+  48:             return Triangle.Type.ISOSCELES
+  49:         
+  50:         return Triangle.Type.INVALID
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant23_24_25_46 (test_mutationAdequate.MutantAdequateTest)
+   - [#  26] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  18:     def classify(a, b, c):'''
+  19:         This static method does the actual classification of a triangle, given the lengths
+  20:         of its three sides.
+  21:         '''
+- 22:         if (a <= 0 or b <= 0 or c <= 0):
++ 22:         if (a >= 0 or b <= 0 or c <= 0):
+  23:             return Triangle.Type.INVALID
+  24:         
+  25:         trian = 0
+  26:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant1_2_3_15_16_36_38_40 (test_mutationAdequate.MutantAdequateTest)
+   - [#  27] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  18:     def classify(a, b, c):'''
+  19:         This static method does the actual classification of a triangle, given the lengths
+  20:         of its three sides.
+  21:         '''
+- 22:         if (a <= 0 or b <= 0 or c <= 0):
++ 22:         if (a < 0 or b <= 0 or c <= 0):
+  23:             return Triangle.Type.INVALID
+  24:         
+  25:         trian = 0
+  26:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killmutant21_27_28 (test_mutationAdequate.MutantAdequateTest)
+   - [#  28] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  18:     def classify(a, b, c):'''
+  19:         This static method does the actual classification of a triangle, given the lengths
+  20:         of its three sides.
+  21:         '''
+- 22:         if (a <= 0 or b <= 0 or c <= 0):
++ 22:         if (a <= 0 or b >= 0 or c <= 0):
+  23:             return Triangle.Type.INVALID
+  24:         
+  25:         trian = 0
+  26:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant1_2_3_15_16_36_38_40 (test_mutationAdequate.MutantAdequateTest)
+   - [#  29] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  18:     def classify(a, b, c):'''
+  19:         This static method does the actual classification of a triangle, given the lengths
+  20:         of its three sides.
+  21:         '''
+- 22:         if (a <= 0 or b <= 0 or c <= 0):
++ 22:         if (a <= 0 or b < 0 or c <= 0):
+  23:             return Triangle.Type.INVALID
+  24:         
+  25:         trian = 0
+  26:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant29 (test_mutationAdequate.MutantAdequateTest)
+   - [#  30] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  18:     def classify(a, b, c):'''
+  19:         This static method does the actual classification of a triangle, given the lengths
+  20:         of its three sides.
+  21:         '''
+- 22:         if (a <= 0 or b <= 0 or c <= 0):
++ 22:         if (a <= 0 or b <= 0 or c >= 0):
+  23:             return Triangle.Type.INVALID
+  24:         
+  25:         trian = 0
+  26:         
+--------------------------------------------------------------------------------
+[0.01562 s] killed by test_killMutant1_2_3_15_16_36_38_40 (test_mutationAdequate.MutantAdequateTest)
+   - [#  31] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  18:     def classify(a, b, c):'''
+  19:         This static method does the actual classification of a triangle, given the lengths
+  20:         of its three sides.
+  21:         '''
+- 22:         if (a <= 0 or b <= 0 or c <= 0):
++ 22:         if (a <= 0 or b <= 0 or c < 0):
+  23:             return Triangle.Type.INVALID
+  24:         
+  25:         trian = 0
+  26:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant31 (test_mutationAdequate.MutantAdequateTest)
+   - [#  32] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  23:             return Triangle.Type.INVALID
+  24:         
+  25:         trian = 0
+  26:         
+- 27:         if a == b:
++ 27:         if a != b:
+  28:             trian += 1
+  29:         if a == c:
+  30:             trian += 2
+  31:         if b == c:
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant1_2_3_15_16_36_38_40 (test_mutationAdequate.MutantAdequateTest)
+   - [#  33] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  25:         trian = 0
+  26:         
+  27:         if a == b:
+  28:             trian += 1
+- 29:         if a == c:
++ 29:         if a != c:
+  30:             trian += 2
+  31:         if b == c:
+  32:             trian += 3
+  33:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant1_2_3_15_16_36_38_40 (test_mutationAdequate.MutantAdequateTest)
+   - [#  34] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  27:         if a == b:
+  28:             trian += 1
+  29:         if a == c:
+  30:             trian += 2
+- 31:         if b == c:
++ 31:         if b != c:
+  32:             trian += 3
+  33:         
+  34:         if trian == 0:
+  35:             if (Decimal(a) + Decimal(b) <= Decimal(c) or Decimal(a) + Decimal(c) <= Decimal(b) or Decimal(b) + Decimal(c) <= Decimal(a)):
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant1_2_3_15_16_36_38_40 (test_mutationAdequate.MutantAdequateTest)
+   - [#  35] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  30:             trian += 2
+  31:         if b == c:
+  32:             trian += 3
+  33:         
+- 34:         if trian == 0:
++ 34:         if trian != 0:
+  35:             if (Decimal(a) + Decimal(b) <= Decimal(c) or Decimal(a) + Decimal(c) <= Decimal(b) or Decimal(b) + Decimal(c) <= Decimal(a)):
+  36:                 return Triangle.Type.INVALID
+  37:             else:
+  38:                 return Triangle.Type.SCALENE
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant1_2_3_15_16_36_38_40 (test_mutationAdequate.MutantAdequateTest)
+   - [#  36] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  31:         if b == c:
+  32:             trian += 3
+  33:         
+  34:         if trian == 0:
+- 35:             if (Decimal(a) + Decimal(b) <= Decimal(c) or Decimal(a) + Decimal(c) <= Decimal(b) or Decimal(b) + Decimal(c) <= Decimal(a)):
++ 35:             if (Decimal(a) + Decimal(b) >= Decimal(c) or Decimal(a) + Decimal(c) <= Decimal(b) or Decimal(b) + Decimal(c) <= Decimal(a)):
+  36:                 return Triangle.Type.INVALID
+  37:             else:
+  38:                 return Triangle.Type.SCALENE
+  39:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant1_2_3_15_16_36_38_40 (test_mutationAdequate.MutantAdequateTest)
+   - [#  37] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  31:         if b == c:
+  32:             trian += 3
+  33:         
+  34:         if trian == 0:
+- 35:             if (Decimal(a) + Decimal(b) <= Decimal(c) or Decimal(a) + Decimal(c) <= Decimal(b) or Decimal(b) + Decimal(c) <= Decimal(a)):
++ 35:             if (Decimal(a) + Decimal(b) < Decimal(c) or Decimal(a) + Decimal(c) <= Decimal(b) or Decimal(b) + Decimal(c) <= Decimal(a)):
+  36:                 return Triangle.Type.INVALID
+  37:             else:
+  38:                 return Triangle.Type.SCALENE
+  39:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant37 (test_mutationAdequate.MutantAdequateTest)
+   - [#  38] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  31:         if b == c:
+  32:             trian += 3
+  33:         
+  34:         if trian == 0:
+- 35:             if (Decimal(a) + Decimal(b) <= Decimal(c) or Decimal(a) + Decimal(c) <= Decimal(b) or Decimal(b) + Decimal(c) <= Decimal(a)):
++ 35:             if (Decimal(a) + Decimal(b) <= Decimal(c) or Decimal(a) + Decimal(c) >= Decimal(b) or Decimal(b) + Decimal(c) <= Decimal(a)):
+  36:                 return Triangle.Type.INVALID
+  37:             else:
+  38:                 return Triangle.Type.SCALENE
+  39:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant1_2_3_15_16_36_38_40 (test_mutationAdequate.MutantAdequateTest)
+   - [#  39] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  31:         if b == c:
+  32:             trian += 3
+  33:         
+  34:         if trian == 0:
+- 35:             if (Decimal(a) + Decimal(b) <= Decimal(c) or Decimal(a) + Decimal(c) <= Decimal(b) or Decimal(b) + Decimal(c) <= Decimal(a)):
++ 35:             if (Decimal(a) + Decimal(b) <= Decimal(c) or Decimal(a) + Decimal(c) < Decimal(b) or Decimal(b) + Decimal(c) <= Decimal(a)):
+  36:                 return Triangle.Type.INVALID
+  37:             else:
+  38:                 return Triangle.Type.SCALENE
+  39:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant39 (test_mutationAdequate.MutantAdequateTest)
+   - [#  40] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  31:         if b == c:
+  32:             trian += 3
+  33:         
+  34:         if trian == 0:
+- 35:             if (Decimal(a) + Decimal(b) <= Decimal(c) or Decimal(a) + Decimal(c) <= Decimal(b) or Decimal(b) + Decimal(c) <= Decimal(a)):
++ 35:             if (Decimal(a) + Decimal(b) <= Decimal(c) or Decimal(a) + Decimal(c) <= Decimal(b) or Decimal(b) + Decimal(c) >= Decimal(a)):
+  36:                 return Triangle.Type.INVALID
+  37:             else:
+  38:                 return Triangle.Type.SCALENE
+  39:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant1_2_3_15_16_36_38_40 (test_mutationAdequate.MutantAdequateTest)
+   - [#  41] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  31:         if b == c:
+  32:             trian += 3
+  33:         
+  34:         if trian == 0:
+- 35:             if (Decimal(a) + Decimal(b) <= Decimal(c) or Decimal(a) + Decimal(c) <= Decimal(b) or Decimal(b) + Decimal(c) <= Decimal(a)):
++ 35:             if (Decimal(a) + Decimal(b) <= Decimal(c) or Decimal(a) + Decimal(c) <= Decimal(b) or Decimal(b) + Decimal(c) < Decimal(a)):
+  36:                 return Triangle.Type.INVALID
+  37:             else:
+  38:                 return Triangle.Type.SCALENE
+  39:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant22_41 (test_mutationAdequate.MutantAdequateTest)
+   - [#  42] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  36:                 return Triangle.Type.INVALID
+  37:             else:
+  38:                 return Triangle.Type.SCALENE
+  39:         
+- 40:         if trian > 3:
++ 40:         if trian < 3:
+  41:             return Triangle.Type.EQUILATERAL
+  42:         
+  43:         if (trian == 1 and Decimal(a) + Decimal(b) > Decimal(c)):
+  44:             return Triangle.Type.ISOSCELES
+--------------------------------------------------------------------------------
+[0.00056 s] killed by test_killMutant23_24_25_46 (test_mutationAdequate.MutantAdequateTest)
+   - [#  43] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  36:                 return Triangle.Type.INVALID
+  37:             else:
+  38:                 return Triangle.Type.SCALENE
+  39:         
+- 40:         if trian > 3:
++ 40:         if trian >= 3:
+  41:             return Triangle.Type.EQUILATERAL
+  42:         
+  43:         if (trian == 1 and Decimal(a) + Decimal(b) > Decimal(c)):
+  44:             return Triangle.Type.ISOSCELES
+--------------------------------------------------------------------------------
+[0.00122 s] killed by test_killMutant52 (test_mutationAdequate.MutantAdequateTest)
+   - [#  44] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  39:         
+  40:         if trian > 3:
+  41:             return Triangle.Type.EQUILATERAL
+  42:         
+- 43:         if (trian == 1 and Decimal(a) + Decimal(b) > Decimal(c)):
++ 43:         if (trian != 1 and Decimal(a) + Decimal(b) > Decimal(c)):
+  44:             return Triangle.Type.ISOSCELES
+  45:         elif (trian == 2 and Decimal(a) + Decimal(c) > Decimal(b)):
+  46:             return Triangle.Type.ISOSCELES
+  47:         elif (trian == 3 and Decimal(b) + Decimal(c) > Decimal(a)):
+--------------------------------------------------------------------------------
+[0.00100 s] killed by test_killMutant49 (test_mutationAdequate.MutantAdequateTest)
+   - [#  45] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  39:         
+  40:         if trian > 3:
+  41:             return Triangle.Type.EQUILATERAL
+  42:         
+- 43:         if (trian == 1 and Decimal(a) + Decimal(b) > Decimal(c)):
++ 43:         if (trian == 1 and Decimal(a) + Decimal(b) < Decimal(c)):
+  44:             return Triangle.Type.ISOSCELES
+  45:         elif (trian == 2 and Decimal(a) + Decimal(c) > Decimal(b)):
+  46:             return Triangle.Type.ISOSCELES
+  47:         elif (trian == 3 and Decimal(b) + Decimal(c) > Decimal(a)):
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant4_7_11_17_32_44_45 (test_mutationAdequate.MutantAdequateTest)
+   - [#  46] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  39:         
+  40:         if trian > 3:
+  41:             return Triangle.Type.EQUILATERAL
+  42:         
+- 43:         if (trian == 1 and Decimal(a) + Decimal(b) > Decimal(c)):
++ 43:         if (trian == 1 and Decimal(a) + Decimal(b) >= Decimal(c)):
+  44:             return Triangle.Type.ISOSCELES
+  45:         elif (trian == 2 and Decimal(a) + Decimal(c) > Decimal(b)):
+  46:             return Triangle.Type.ISOSCELES
+  47:         elif (trian == 3 and Decimal(b) + Decimal(c) > Decimal(a)):
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant23_24_25_46 (test_mutationAdequate.MutantAdequateTest)
+   - [#  47] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  41:             return Triangle.Type.EQUILATERAL
+  42:         
+  43:         if (trian == 1 and Decimal(a) + Decimal(b) > Decimal(c)):
+  44:             return Triangle.Type.ISOSCELES
+- 45:         elif (trian == 2 and Decimal(a) + Decimal(c) > Decimal(b)):
++ 45:         elif (trian != 2 and Decimal(a) + Decimal(c) > Decimal(b)):
+  46:             return Triangle.Type.ISOSCELES
+  47:         elif (trian == 3 and Decimal(b) + Decimal(c) > Decimal(a)):
+  48:             return Triangle.Type.ISOSCELES
+  49:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant23_24_25_46 (test_mutationAdequate.MutantAdequateTest)
+   - [#  48] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  41:             return Triangle.Type.EQUILATERAL
+  42:         
+  43:         if (trian == 1 and Decimal(a) + Decimal(b) > Decimal(c)):
+  44:             return Triangle.Type.ISOSCELES
+- 45:         elif (trian == 2 and Decimal(a) + Decimal(c) > Decimal(b)):
++ 45:         elif (trian == 2 and Decimal(a) + Decimal(c) < Decimal(b)):
+  46:             return Triangle.Type.ISOSCELES
+  47:         elif (trian == 3 and Decimal(b) + Decimal(c) > Decimal(a)):
+  48:             return Triangle.Type.ISOSCELES
+  49:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant5_12_18_33_47_48 (test_mutationAdequate.MutantAdequateTest)
+   - [#  49] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  41:             return Triangle.Type.EQUILATERAL
+  42:         
+  43:         if (trian == 1 and Decimal(a) + Decimal(b) > Decimal(c)):
+  44:             return Triangle.Type.ISOSCELES
+- 45:         elif (trian == 2 and Decimal(a) + Decimal(c) > Decimal(b)):
++ 45:         elif (trian == 2 and Decimal(a) + Decimal(c) >= Decimal(b)):
+  46:             return Triangle.Type.ISOSCELES
+  47:         elif (trian == 3 and Decimal(b) + Decimal(c) > Decimal(a)):
+  48:             return Triangle.Type.ISOSCELES
+  49:         
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant49 (test_mutationAdequate.MutantAdequateTest)
+   - [#  50] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  43:         if (trian == 1 and Decimal(a) + Decimal(b) > Decimal(c)):
+  44:             return Triangle.Type.ISOSCELES
+  45:         elif (trian == 2 and Decimal(a) + Decimal(c) > Decimal(b)):
+  46:             return Triangle.Type.ISOSCELES
+- 47:         elif (trian == 3 and Decimal(b) + Decimal(c) > Decimal(a)):
++ 47:         elif (trian != 3 and Decimal(b) + Decimal(c) > Decimal(a)):
+  48:             return Triangle.Type.ISOSCELES
+  49:         
+  50:         return Triangle.Type.INVALID
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant23_24_25_46 (test_mutationAdequate.MutantAdequateTest)
+   - [#  51] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  43:         if (trian == 1 and Decimal(a) + Decimal(b) > Decimal(c)):
+  44:             return Triangle.Type.ISOSCELES
+  45:         elif (trian == 2 and Decimal(a) + Decimal(c) > Decimal(b)):
+  46:             return Triangle.Type.ISOSCELES
+- 47:         elif (trian == 3 and Decimal(b) + Decimal(c) > Decimal(a)):
++ 47:         elif (trian == 3 and Decimal(b) + Decimal(c) < Decimal(a)):
+  48:             return Triangle.Type.ISOSCELES
+  49:         
+  50:         return Triangle.Type.INVALID
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant6_19_43_50_51 (test_mutationAdequate.MutantAdequateTest)
+   - [#  52] ROR isTriangle: 
+--------------------------------------------------------------------------------
+  43:         if (trian == 1 and Decimal(a) + Decimal(b) > Decimal(c)):
+  44:             return Triangle.Type.ISOSCELES
+  45:         elif (trian == 2 and Decimal(a) + Decimal(c) > Decimal(b)):
+  46:             return Triangle.Type.ISOSCELES
+- 47:         elif (trian == 3 and Decimal(b) + Decimal(c) > Decimal(a)):
++ 47:         elif (trian == 3 and Decimal(b) + Decimal(c) >= Decimal(a)):
+  48:             return Triangle.Type.ISOSCELES
+  49:         
+  50:         return Triangle.Type.INVALID
+--------------------------------------------------------------------------------
+[0.00000 s] killed by test_killMutant52 (test_mutationAdequate.MutantAdequateTest)
+[*] Mutation score [1.46763 s]: 98.1%
+   - all: 52
+   - killed: 51 (98.1%)
+   - survived: 1 (1.9%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)
