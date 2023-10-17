@@ -45,22 +45,22 @@ developing a mutation-adequate test suite? Briefly explain why or why not.
 Ans: Both approaches were similar in that they targeted specific parts of the original program (e.g., lines, branch, mutation). But for the mutation-adequate test suite, the approach needed to take into account the difference between the original program and the mutant. To kill a given mutant, you needed to design a test case where the same inputs led the original program to produce the expected output but that mutant do NOT produce the expected output.
 
 
-5. Consider your mutation test suite and the triangle program. For each undetected mutant, briefly explain why it is not detectable. For any given program, why are some mutants not detectable?
+4. Consider your mutation test suite and the triangle program. For each undetected mutant, briefly explain why it is not detectable. For any given program, why are some mutants not detectable?
 
 Ans: 
 For an undetectable mutant, it is behaviorally equivalent to the original program. For all possible test case inputs, the mutant and the original program produce the exact same outputs so either both pass the test case or else both fail it. To kill a given mutant, you need to design a test case where the same inputs led the original program to produce the expected output but the mutant to NOT produce the expected output to kill that mutant. For the undetectable mutants, such inputs do not exist.
 
-### Equivalent Mutants
+-Equivalent Mutants
 Equivalent mutants are mutants that, although syntactically different, are semantically equivalent to the original program. That is, they produce the same output for all possible inputs. Detecting such mutants is theoretically undecidable, making them notoriously hard to kill.
 
-### Redundant Code
+-Redundant Code
 If the mutated code section is not reachable or redundant, then no test case can detect it. This is often indicative of dead or deactivated code in the program.
 
-### Insufficient Test Coverage
+-Insufficient Test Coverage
 Some mutants may represent edge or corner cases that the existing test suite has not been designed to capture. Even a high mutation score like 98.1% does not guarantee that all edge cases are covered.
 
 
-### Example from Our Case
+-Example from Our Case
 Consider the following undetected mutant in the mutation_output log:
 ```diff
 -  if (a <= 0 or b <= 0 or c <= 0):
@@ -69,7 +69,7 @@ Consider the following undetected mutant in the mutation_output log:
 This mutant is difficult to detect because it changes the behavior of the code only when all sides are less than or equal to zero. The existing tests don't cover this particular scenario. However, it's arguable whether this is an important case to consider; in most real-world contexts, a triangle with all sides <= 0 is clearly invalid, and the program would still return `INVALID` for any such input.
 
 
-6. What changes in the code coverage percentages and mutant detection rate did you observe when deleting (or commenting out) all assertions?
+5. What changes in the code coverage percentages and mutant detection rate did you observe when deleting (or commenting out) all assertions?
 
 Ans:
 
@@ -88,7 +88,7 @@ Mutant Detection Rate:
 
 -False Negatives: All mutants will survive, suggesting that the code under test is of low quality, even though this might not be the case.
 
-7. Create a definition of “test case redundancy” based on code coverage or mutation analysis. Given your definition of test case redundancy, are some of the test cases in your test suites redundant? Given your definition of test case redundancy, would you remove redundant test cases? Briefly explain why or why not.
+6. Create a definition of “test case redundancy” based on code coverage or mutation analysis. Given your definition of test case redundancy, are some of the test cases in your test suites redundant? Given your definition of test case redundancy, would you remove redundant test cases? Briefly explain why or why not.
 
 Ans:
 
@@ -115,7 +115,7 @@ Should Redundant Tests be Removed?
 Each "redundant" test should be individually examined before removal.
 
 
-8. How many decision points did you find for the Control flow graph for scalene triangle, equilateral triangle, and isosceles triangle? Identify and note by type of decision points (e.g, side equality, side lengths. ) Did these findings help you to create a better test suite?
+7. How many decision points did you find for the Control flow graph for scalene triangle, equilateral triangle, and isosceles triangle? Identify and note by type of decision points (e.g, side equality, side lengths. ) Did these findings help you to create a better test suite?
 
 Ans: 
 
@@ -130,7 +130,7 @@ Ans:
 
 The decision points help to create test cases addressing each branch or condition and ensures overall coverage. The required conditions are highlighted by the decision points for each triangle and also helps to identify potential edge cases or boundary conditions, like very small or large side lengths. These findings help in creating specific test cases. 
 
-9. How did you handle the exception cases of invalid sides and triangle inequality? How many decision points were in the CFG for these cases?
+8. How did you handle the exception cases of invalid sides and triangle inequality? How many decision points were in the CFG for these cases?
 
 
 Ans: 
