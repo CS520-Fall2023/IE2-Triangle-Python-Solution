@@ -45,19 +45,16 @@ developing a mutation-adequate test suite? Briefly explain why or why not.
 Ans: Both approaches were similar in that they targeted specific parts of the original program (e.g., lines, branch, mutation). But for the mutation-adequate test suite, the approach needed to take into account the difference between the original program and the mutant. To kill a given mutant, you needed to design a test case where the same inputs led the original program to produce the expected output but that mutant do NOT produce the expected output.
 
 
-4. Consider your mutation test suite and the triangle program. For each undetected mutant, briefly explain why it is not detectable. For any given program, why are some mutants not detectable?
+4. Consider your mutation test suite and the triangle program. For any given program, why are some mutants not detectable?
 
 Ans: 
-For an undetectable mutant, it is behaviorally equivalent to the original program. For all possible test case inputs, the mutant and the original program produce the exact same outputs so either both pass the test case or else both fail it. To kill a given mutant, you need to design a test case where the same inputs led the original program to produce the expected output but the mutant to NOT produce the expected output to kill that mutant. For the undetectable mutants, such inputs do not exist.
+For an undetectable mutant, it is behaviorally equivalent to the original program. For all possible test case inputs, the mutant and the original program produce the exact same outputs so either both pass the test case or else both fail it. To kill a given mutant, you need to design a test case where the same inputs led the original program to produce the expected output but the mutant to NOT produce the expected output to kill that mutant. For the undetectable mutants, such inputs do not exist. Here are some common reasons for undetectable mutants.
 
 -Equivalent Mutants
-Equivalent mutants are mutants that, although syntactically different, are semantically equivalent to the original program. That is, they produce the same output for all possible inputs. Detecting such mutants is theoretically undecidable, making them notoriously hard to kill.
+Equivalent mutants are mutants that, although syntactically different, are semantically equivalent to the original program. That is, they produce the same output for all possible inputs. 
 
 -Redundant Code
-If the mutated code section is not reachable or redundant, then no test case can detect it. This is often indicative of dead or deactivated code in the program.
-
--Insufficient Test Coverage
-Some mutants may represent edge or corner cases that the existing test suite has not been designed to capture. Even a high mutation score like 98.1% does not guarantee that all edge cases are covered.
+If the mutated code section is not reachable, then no test case can detect it. This is often indicative of dead code in the program.
 
 
 -Example from Our Case
@@ -75,7 +72,7 @@ Ans:
 
 Code Coverage:
 
--Rate Unchanged: The code coverage percentages for `test_conditionCoverage.py` would likely remain the same. Code coverage measures which lines of code are executed, not whether they produce the correct output.
+-Rate Unchanged: The code coverage percentages for `test_conditionCoverage.py` should remain the same. Code coverage measures which lines of code are executed, not whether they produce the correct output.
 
 -Line Execution Continues: Even if assertions are commented out, the lines invoking methods like `Triangle.classify()` will still be executed. Therefore, these lines will still count as "covered" by the test suite.
 
@@ -130,10 +127,6 @@ Ans:
 
 The decision points help to create test cases addressing each branch or condition and ensures overall coverage. The required conditions are highlighted by the decision points for each triangle and also helps to identify potential edge cases or boundary conditions, like very small or large side lengths. These findings help in creating specific test cases. 
 
-8. How did you handle the exception cases of invalid sides and triangle inequality? How many decision points were in the CFG for these cases?
-
-
-Ans: 
    Invalid Sides
    Decision Points for Invalid Sides: 3 (One for each side's length)
 
