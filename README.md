@@ -34,10 +34,10 @@ Documentation: The README file tells you how to build and run the project.
 
 Automation Scripts: There are shell scripts to run the coverage tool and the mutation analysis tool. 
 
-2. For the initial test suite, what is the statement (a.k.a. line) coverage percentage? the condition (a.k.a.
-branch) coverage percentage? the mutant detection rate?
+2. For the isTriangle class with the initial test suite, what is the statement (a.k.a. line) coverage percentage? the decision (a.k.a.
+branch) coverage percentage? the mutant detection rate (often called a mutation score)?
 
-Ans: Initial Test scores: Statement coverage 65%. Condition coverage 51%, and Mutation score : 0%.   Total generated mutants: 52, killed: 0 (0%) and survived: 52 (100%).
+Ans: Initial Test scores: Statement coverage 65%. Decision coverage 51%, and Mutant detection rate : 0%.   Total generated mutants: 52, killed: 0 (0%) and survived: 52 (100%).
 
 3. Did your approach to writing unit tests differ between developing a coverage-adequate test suite and
 developing a mutation-adequate test suite? Briefly explain why or why not.
