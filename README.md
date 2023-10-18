@@ -7,7 +7,7 @@ test effectiveness, using code coverage and mutation analysis.
 2. Test the setup by running 
   ```
    cd test_suit
-   python -m test_isTriangle
+   python3 -m test_isTriangle
    ```
 For more information on ```Pytest```, you can take a look at the homepage https://pypi.org/project/pytest/. 
 
