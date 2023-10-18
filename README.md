@@ -37,7 +37,7 @@ Automation Scripts: There are shell scripts to run the coverage tool and the mut
 2. For the initial test suite, what is the statement (a.k.a. line) coverage percentage? the condition (a.k.a.
 branch) coverage percentage? the mutant detection rate?
 
-Ans: Initial Test scores: Statement coverage 89%. Condition coverage 91%, and Mutation score : 23.1%.   Total generated mutants: 52, killed: 12 (23.1%) and survived: 40 (76.9%).
+Ans: Initial Test scores: Statement coverage 65%. Condition coverage 51%, and Mutation score : 0%.   Total generated mutants: 52, killed: 0 (0%) and survived: 52 (100%).
 
 3. Did your approach to writing unit tests differ between developing a coverage-adequate test suite and
 developing a mutation-adequate test suite? Briefly explain why or why not.
