@@ -1,7 +1,7 @@
 import unittest
 from isTriangle import Triangle
 
-class ConditionCoverageTestSuite(unittest.TestCase):
+class DecisionCoverageTestSuite(unittest.TestCase):
     def test0(self):
         actual = Triangle.classify(10, 10, 10)
         expected = Triangle.Type.EQUILATERAL
