@@ -2,7 +2,7 @@ import sys
 import random  # Import the random module
 
 # Set a fixed random seed
-random.seed(123)  # Use any integer value you prefer as the seed
+random.seed(123) 
 
 
 from mutpy import commandline
