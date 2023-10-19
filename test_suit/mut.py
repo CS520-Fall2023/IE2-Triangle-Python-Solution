@@ -1,6 +1,10 @@
-#!d:\Phd_2022\Spring23\TAcourse\in-class-exercise\in-class2-git\in-class2-python\.venv\Scripts\python.exe
-
 import sys
+import random  # Import the random module
+
+# Set a fixed random seed
+random.seed(123)  # Use any integer value you prefer as the seed
+
+
 from mutpy import commandline
 
 if __name__ == '__main__':
