@@ -121,22 +121,58 @@ Each "redundant" test should be individually examined before removal.
 
 Ans: 
 
-   Scalene Triangle:
-   Decision Points: 6 (Three for side lengths, and three for side equality)
+### Decision points for normative paths(scalene, isosceles and equilateral triangle)
 
-   Equilateral Triangle:
-   Decision Points: 5 (Three for side lengths, and two for side equality)
+**Scalene Triangle**:
 
-   Isosceles Triangle:
-   Decision Points: 5 (Three for side lengths, and two for side equality)
+- Node 10: Checks if ```trian == 0```, which would indicate a Scalene triangle if the triangle inequalities are satisfied.
+
+- Node 11: Checks the triangle inequalities 
+a+b>c, a+c>b, and b+c>a.
+
+So, for Scalene triangles, you would primarily look at Nodes 10 and 11. Node 1 (which checks if any of the sides are less than or equal to zero) is a general check for validity and applies to all types of triangles, not just Scalene.
+
+**Isosceles and Equilateral Triangle**
+
+- Node 14: Checks if trian > 3, which would indicate an Equilateral triangle.
+
+- Nodes 16, 18, and 20: These nodes check various conditions to determine if the triangle is Isosceles based on the value of trian.
+
+For Isosceles and Equilateral triangles, the primary decision points are Nodes 14, 16, 18, and 20.
+
+It's worth noting that Node 1, which checks for non-positive side lengths, and Node 11, which checks for violations of the triangle inequality, are general checks that apply to all types of triangles.
+
+Summary:
+
+Scalene: Nodes 10 and 11
+
+Isosceles: Nodes 16,18 and 20
+
+Equilateral: Node 14
 
 The decision points help to create test cases addressing each branch or condition and ensures overall coverage. The required conditions are highlighted by the decision points for each triangle and also helps to identify potential edge cases or boundary conditions, like very small or large side lengths. These findings help in creating specific test cases. 
 
-   Invalid Sides
-   Decision Points for Invalid Sides: 3 (One for each side's length)
 
-   Triangle Inequality
-   Decision Points for Triangle Inequality: 3 (One for each inequality condition)
+### Decision points of exception paths (Invalid sides and Triangle Inequality)
+
+
+- Node 1: This node checks whether any of the sides 
+a,b,c are less than or equal to zero. If any of these conditions are true, the function returns INVALID.
+
+- Node 11: This node is where the triangle inequality conditions are checked. Specifically, it verifies whether a+b≤c, a+c≤b, or b+c≤a. If any of these conditions hold, the function returns INVALID.
+
+- Node 20: This node appears to serve as a "catch-all" for any cases that somehow manage to bypass the earlier checks without being classified as any of the valid triangle types (Scalene, Isosceles, or Equilateral). In such cases, the function returns INVALID.
+
+Node 1 and Node 11 are designed to catch scenarios where the given side lengths cannot form a valid triangle, either because they are non-positive (Node 1) or because they violate the triangle inequality theorem (Node 11). Node 20 acts as a fail-safe, ensuring that the function does not return an undefined or incorrect classification. It's a good practice to have such a catch-all condition to handle unexpected inputs or states that might not be caught by the primary logic.
+
+So, we have three main decision points related to exception cases:
+
+Node 1: Checks for non-positive side lengths.
+
+Node 11: Checks for violations of the triangle inequality theorem.
+
+Node 20: Acts as a fail-safe for unclassified or unexpected cases, returning INVALID.
+
 
    To address these exception cases when creating a test suite:
    - Test with one or more sides having a non-positive value (e.g., 0, -1).
