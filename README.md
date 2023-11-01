@@ -49,13 +49,13 @@ NOTE) The versions of python and the testing tools may have affected the above n
 3. Did your approach to writing unit tests differ between developing a coverage-adequate test suite and
 developing a mutation-adequate test suite? Briefly explain why or why not.
 
-Ans: Both approaches were similar in that they targeted specific parts of the original program (e.g., lines, branch, mutation). But for the mutation-adequate test suite, the approach needed to take into account the difference between the original program and the mutant. To kill a given mutant, you needed to design a test case where the same inputs led the original program to produce the expected output but that mutant do NOT produce the expected output.
+Ans: Both approaches were similar in that they targeted specific parts of the original program (e.g., lines, branch, mutation). But for the mutation-adequate test suite, the approach needed to take into account the difference between the original program and the mutant. To kill a given mutant, you needed to design a test case where the same inputs led the original program to produce the expected output but that mutant did NOT produce the expected output.
 
 
 4. Consider your mutation test suite and the triangle program. For any given program, why are some mutants not detectable?
 
 Ans: 
-For an undetectable mutant, it is behaviorally equivalent to the original program. For all possible test case inputs, the mutant and the original program produce the exact same outputs so either both pass the test case or else both fail it. To kill a given mutant, you need to design a test case where the same inputs led the original program to produce the expected output but the mutant to NOT produce the expected output to kill that mutant. For the undetectable mutants, such inputs do not exist. Here are some common reasons for undetectable mutants.
+For an undetectable mutant, it is behaviorally equivalent to the original program. For all possible test case inputs, the mutant and the original program produce the exact same outputs, meaning either both pass the test case or else both fail it. To kill a given mutant, you need to design a test case where the same inputs led the original program to produce the expected output but the mutant to NOT produce the expected output to kill that mutant. For the undetectable mutants, such inputs do not exist. Here are some common reasons for undetectable mutants.
 
 -Equivalent Mutants
 Equivalent mutants are mutants that, although syntactically different, are semantically equivalent to the original program. That is, they produce the same output for all possible inputs. 
@@ -63,23 +63,13 @@ Equivalent mutants are mutants that, although syntactically different, are seman
 -Redundant Code
 If the mutated code section is not reachable, then no test case can detect it. This is often indicative of dead code in the program.
 
-
--Example from Our Case
-Consider the following undetected mutant in the mutation_output log:
-```diff
--  if (a <= 0 or b <= 0 or c <= 0):
-+  if (a <= 0 and b <= 0 and c <= 0):
-```
-This mutant is difficult to detect because it changes the behavior of the code only when all sides are less than or equal to zero. The existing tests don't cover this particular scenario. However, it's arguable whether this is an important case to consider; in most real-world contexts, a triangle with all sides <= 0 is clearly invalid, and the program would still return `INVALID` for any such input.
-
-
 5. What changes in the code coverage percentages and mutant detection rate did you observe when deleting (or commenting out) all assertions?
 
 Ans:
 
 Code Coverage:
 
--Rate Unchanged: The code coverage percentages for `test_conditionCoverage.py` should remain the same. Code coverage measures which lines of code are executed, not whether they produce the correct output.
+-Rate Unchanged: The code coverage percentages for `test_conditionCoverage.py` should remain the same. Code coverage measures which lines of code are executed, not whether they produce the expected output.
 
 -Line Execution Continues: Even if assertions are commented out, the lines invoking methods like `Triangle.classify()` will still be executed. Therefore, these lines will still count as "covered" by the test suite.
 
@@ -96,7 +86,7 @@ Mutant Detection Rate:
 
 Ans:
 
-Test Case Redundancy Definition
+Here are two examples of Test Case Redundancy Definitions
 
 - Code Coverage: A test is "redundant" if it doesn't cover any new lines or conditions.
   
@@ -118,6 +108,8 @@ Should Redundant Tests be Removed?
 
 Each "redundant" test should be individually examined before removal.
 
+NOTE) Other definitions are acceptable.
+
 
 7. How many decision points did you find for the Control flow graph for scalene triangle, equilateral triangle, and isosceles triangle? Identify and note by type of decision points (e.g, side equality, side lengths. ) Did these findings help you to create a better test suite?
 
@@ -132,7 +124,7 @@ Ans:
 - Node 11: Checks the triangle inequalities 
 a+b>c, a+c>b, and b+c>a.
 
-So, for Scalene triangles, you would primarily look at Nodes 10 and 11. Node 1 (which checks if any of the sides are less than or equal to zero) is a general check for validity and applies to all types of triangles, not just Scalene.
+So, for Scalene triangles, you would primarily look at Nodes 10 and 11. Node 1 (which checks if any of the sides are less than or equal to zero) is a general check for validity and applies to all types of triangles, not just Scalene. Node 4, 6, and 8 are checking for the relationships among the three sides.
 
 **Isosceles and Equilateral Triangle**
 
@@ -142,7 +134,7 @@ So, for Scalene triangles, you would primarily look at Nodes 10 and 11. Node 1 (
 
 For Isosceles and Equilateral triangles, the primary decision points are Nodes 14, 16, 18, and 20.
 
-It's worth noting that Node 1, which checks for non-positive side lengths, and Node 11, which checks for violations of the triangle inequality, are general checks that apply to all types of triangles.
+It's worth noting that Node 1, which checks for non-positive side lengths, and Node 11, which checks for violations of the triangle inequality, are general checks that apply to all types of triangles. Node 4, 6, and 8 are checking for the relationships among the three sides.
 
 Summary:
 
@@ -161,9 +153,9 @@ The decision points help to create test cases addressing each branch or conditio
 - Node 1: This node checks whether any of the sides 
 a,b,c are less than or equal to zero. If any of these conditions are true, the function returns INVALID.
 
-- Node 11: This node is where the triangle inequality conditions are checked. Specifically, it verifies whether a+b≤c, a+c≤b, or b+c≤a. If any of these conditions hold, the function returns INVALID.
+- Node 11: This node is where the triangle inequality conditions are checked. Specifically, it verifies whether a+b≤c, a+c≤b, or b+c≤a. If any of these conditions hold, the function returns INVALID. Node 4, 6, and 8 are checking for the relationships among the three sides.
 
-- Node 20: This node appears to serve as a "catch-all" for any cases that somehow manage to bypass the earlier checks without being classified as any of the valid triangle types (Scalene, Isosceles, or Equilateral). In such cases, the function returns INVALID.
+- Node 20: This node appears to serve as a "catch-all" for any cases that somehow manage to bypass the earlier checks without being classified as any of the valid triangle types (Scalene, Isosceles, or Equilateral). In such cases, the function returns INVALID. Node 4, 6, and 8 are checking for the relationships among the three sides.
 
 Node 1 and Node 11 are designed to catch scenarios where the given side lengths cannot form a valid triangle, either because they are non-positive (Node 1) or because they violate the triangle inequality theorem (Node 11). Node 20 acts as a fail-safe, ensuring that the function does not return an undefined or incorrect classification. It's a good practice to have such a catch-all condition to handle unexpected inputs or states that might not be caught by the primary logic.
 
