@@ -44,6 +44,8 @@ branch) coverage percentage? the mutant detection rate (often called a mutation 
 
 Ans: Initial Test scores: Statement coverage 65%. Decision coverage 51%, and Mutant detection rate : 23.1%.   Total generated mutants: 52, killed: 12 (23.1%) and survived: 40 (76.9%).
 
+NOTE) The versions of python and the testing tools may have affected the above numbers. The statement coverage should be higher than the decision coverage. The decision coverage should be higher than the mutant detection rate.
+
 3. Did your approach to writing unit tests differ between developing a coverage-adequate test suite and
 developing a mutation-adequate test suite? Briefly explain why or why not.
 
