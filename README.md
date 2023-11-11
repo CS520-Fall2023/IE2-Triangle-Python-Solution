@@ -60,7 +60,7 @@ Ans:
 For an undetectable mutant, it is behaviorally equivalent to the original program. For all possible test case inputs, the mutant and the original program produce the exact same outputs, meaning either both pass the test case or else both fail it. To kill a given mutant, you need to design a test case where the same inputs led the original program to produce the expected output but the mutant to NOT produce the expected output to kill that mutant. For the undetectable mutants, such inputs do not exist. Here are some common reasons for undetectable mutants.
 
 -Equivalent Mutants
-Equivalent mutants are mutants that, although syntactically different, are semantically equivalent to the original program. That is, they produce the same output for all possible inputs. 
+Equivalent mutants are mutants that, although syntactically different, are semantically equivalent to the original program. That is, they produce the same output for all possible inputs. For instance, one commonly generated mutant removed the @staticmethod annotation. This caused a warning to be reported. But it did not change the expected outputs.
 
 -Redundant Code
 If the mutated code section is not reachable, then no test case can detect it. This is often indicative of dead code in the program.
