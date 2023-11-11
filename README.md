@@ -115,6 +115,8 @@ NOTE) Other definitions are acceptable.
 
 7. How many decision points did you find for the Control flow graph for scalene triangle, equilateral triangle, and isosceles triangle? Identify and note by type of decision points (e.g, side equality, side lengths. ) Did these findings help you to create a better test suite?
 
+There were three common ways to answer this question. The first way listed all of the decision nodes for each CFG path. This is similar to what is shown below. The second way was to list all of the last decision nodes before the return statements in each CFG path. The third way was to list all of the decision nodes in the CFG as well as partition them into the normatives decision nodes and the exceptional ones. All three ways could receive full credit.
+
 Ans: 
 
 ### Decision points for normative paths(scalene, isosceles and equilateral triangle)
