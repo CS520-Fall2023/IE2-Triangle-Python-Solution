@@ -42,7 +42,9 @@ Automation Scripts: There are shell scripts to run the coverage tool and the mut
 2. For the isTriangle class with the initial test suite, what is the statement (a.k.a. line) coverage percentage? the decision (a.k.a.
 branch) coverage percentage? the mutant detection rate (often called a mutation score)?
 
-Ans: Initial Test scores: Statement coverage 65%. Decision coverage 51%, and Mutant detection rate : 23.1%.   Total generated mutants: 52, killed: 12 (23.1%) and survived: 40 (76.9%).
+Ans: For most groups, the INITIAL TEST SUITE scores are: Statement coverage 65%. Decision coverage 51%, and Mutant detection rate : 23.1%.   Total generated mutants: 52, killed: 12 (23.1%) and survived: 40 (76.9%).
+
+The mutation analysis tool, however, used a random seed. This could impact the above. For a small number of groups, the scores were different. Here is what we checked for them: 1) Based on the coverage analysis definitions, the statement coverage score is usually noticeably higher than the decision coverage score. Additionally given that the test suite had only 1 test case, the coverage score should not be near 90. 2) Based on the coverage versus mutation analysis definitions, the coverage scores are usually noticeably higher than the mutant detection rate. Additionally given the test case, it was very unlikely that the mutation detection rate was 0.
 
 NOTE) The versions of python and the testing tools may have affected the above numbers. The statement coverage should be higher than the decision coverage. The decision coverage should be higher than the mutant detection rate.
 
